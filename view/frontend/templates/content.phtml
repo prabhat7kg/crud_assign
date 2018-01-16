@@ -1,0 +1,40 @@
+<?php
+//echo $this->getData();
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crud Assignment</title>
+</head>
+<body>
+<?php
+$collection = $this->_prepareLayout();
+//echo $block->getTestModel()->getTestId();
+?>
+<table class="table" border=0>
+    <thead>
+      <tr>
+      	<th><a class="add" href="<?php echo $this->getUrl()?>excellence/hello/form">Add</a></th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Gender</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php foreach ($collection as $item): ?>  
+      <tr>
+        <td id="links"><a class="edit" href="<?php echo $this->getUrl()?>excellence/hello/edit?id=<?php echo $item->getId();?> ">Edit</a><a class="delete" href="<?php echo $this->getUrl()?>excellence/hello/delete?id=<?php echo $item->getId();?>">Delete</a> </td>
+        <td><?php echo $item->getId();?></td>
+        <td><?php echo $item->getName();?></td>
+        <td><?php echo $item->getEmail();?></td>
+        <td><?php echo $item->getMobileNumber();?></td>
+        <td><?php echo $item->getGender();?></td>
+      </tr>
+    <?php endforeach; ?>  
+    </tbody>
+</table>
+</body>
+</html>

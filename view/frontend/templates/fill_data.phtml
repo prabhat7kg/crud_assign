@@ -1,0 +1,65 @@
+<?php
+//@$submit=$_POST['add'];
+//@$name=$_POST['name'];
+//@$number=$_POST['number'];
+//@$email=$_POST['email'];
+//@$gender=$_POST['g'];
+/*
+$checked_female=null;
+$checked_male=null;
+$_SESSION["name"]=null;
+$_SESSION["email"]=null;
+$_SESSION["number"]=null;
+if(isset($_POST['add']))
+{
+	$_SESSION["name"]=$name;
+	$_SESSION["email"]=$email;
+	$_SESSION["number"]=$number;
+	$_SESSION["gender"]=$gender;
+	if($_SESSION["gender"]=="Male")
+		$checked_male="checked";
+	else
+		$checked_female="checked";
+}*/
+
+$data=$block->_prepareLayout();
+
+//$data->getName();
+//echo $data[0];
+
+$checked_male=null;
+$checked_female=null;
+if($data[3]=="Male")
+		$checked_male="checked";
+	else if($data[3]=="Female")
+		$checked_female="checked";
+//$data[3];
+	$submit=null;
+	if($data)
+		$submit="Update";
+	else
+		$submit="Add Row";
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add/Delete/Edit Database</title>
+</head>
+<body>
+
+	<center>
+<form method="post" action="world">
+    <input type="hidden" name="id" value="<?php if($data) ?>" />
+	<label>Name</label><input type="text" name="name" value="<?php if($data)echo $data[0];?>" required/><br><br>
+	<label>Email</label><input type="email" name="email" value="<?php if($data) echo $data[1]; ?>" /><br><br>
+	<label>Mobile Number</label><input type="number" name="number" value="<?php if($data) echo $data[2];?>" /><br><br>
+	<label id="gender">Gender</label><input type="radio" name="g" value="Male" <?php echo $checked_male;?>/>
+	<label>Male</label><input type="radio" name="g" value="Female" <?php echo $checked_female;?>/><label>Female</label><br><br>
+
+	<input type="submit" name="add" value="<?php echo $submit;?>"/>
+</form>
+</center>
+</body>
+</html>
