@@ -13,14 +13,9 @@ class Edit extends \Magento\Framework\View\Element\Template
     }
 	public function _preparelayout()
 	{
-         $data = $this->getRequest()->getParams();
-         $test = $this->_testFactory->create();
-         //print_r($data);
-         $test->load($data['id']);
-
-        //print_r($test->getData());die;
-         //echo $test->getId();
-          //echo $this->getRequest()->getPost('email');
-         return array($test->getName(),$test->getEmail(),$test->getMobileNumber(),$test->getGender());
+         $DbRowId = $this->getRequest()->getParams();
+         $EditFactory = $this->_testFactory->create();
+         $EditFactory->load($DbRowId['id']);
+         return array($EditFactory->getName(),$EditFactory->getEmail(),$EditFactory->getMobileNumber(),$EditFactory->getGender());
 	}
 }

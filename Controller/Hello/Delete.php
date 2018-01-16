@@ -2,19 +2,17 @@
 namespace Excellence\Hello\Controller\Hello;
 class Delete extends \Magento\Framework\App\Action\Action
 {
-    protected $resultPageFactory;
-    //protected $context;
+    protected $deletePageFactory;
     public function __construct(
         \Magento\Framework\App\Action\Context $context,
-        \Magento\Framework\View\Result\PageFactory $resultPageFactory)
+        \Magento\Framework\View\Result\PageFactory $deletePageFactory)
     {
-        $this->resultPageFactory = $resultPageFactory;       
+        $this->deletePageFactory = $deletePageFactory;       
         return parent::__construct($context);
     }
      
     public function execute()
     {
-        
-        return $this->resultPageFactory->create(); 
+        return $this->deletePageFactory->create(); 
     } 
 }

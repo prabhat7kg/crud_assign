@@ -1,23 +1,18 @@
 <?php
 namespace Excellence\Hello\Controller\Hello; 
-
 class World extends \Magento\Framework\App\Action\Action
 {
-    protected $_pageFactory;
+    protected $tablepageFactory;
     public function __construct(
         \Magento\Framework\App\Action\Context $context,
-        \Magento\Framework\View\Result\PageFactory $pageFactory)
+        \Magento\Framework\View\Result\PageFactory $tablepageFactory)
     {
-        $this->_pageFactory = $pageFactory;
+        $this->tablepageFactory = $tablepageFactory;
         return parent::__construct($context);
     }
 
     public function execute()
     {
-        
-        //echo "hello";
-        return $this->_pageFactory->create();
-
-        //die("hello");
+        return $this->tablepageFactory->create();
     }
 }
