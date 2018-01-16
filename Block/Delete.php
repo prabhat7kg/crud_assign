@@ -13,9 +13,9 @@ class Delete extends \Magento\Framework\View\Element\Template
     }
 	public function _preparelayout()
 	{
-         $DbRowId = $this->getRequest()->getParams();
-         $DeleteFactory = $this->_testFactory->create();
-         $DeleteFactory->load($DbRowId['id']);
-         $DeleteFactory->delete($DeleteFactory->getId());
+         $dbRowId = $this->getRequest()->getParams();
+         $deleteFactory = $this->_testFactory->create();
+         $deleteFactory->load($dbRowId['id']);
+         $deleteFactory->delete($deleteFactory->getId());
 	}
 }

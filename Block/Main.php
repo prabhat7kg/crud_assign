@@ -14,28 +14,28 @@ class Main extends \Magento\Framework\View\Element\Template
         public function _prepareLayout()
         {
             //Collection show factory and Edit or Delete Data
-            $TableOperationFactory = $this->_testFactory->create();
+            $tableOperationFactory = $this->_testFactory->create();
             if($this->getRequest()->getPost('id'))
             {
-                $TableOperationFactory->load($this->getRequest()->getPost('id'));
-                $TableOperationFactory->setName($this->getRequest()->getPost('name'));
-                $TableOperationFactory->setEmail($this->getRequest()->getPost('email'));
-                $TableOperationFactory->setMobileNumber($this->getRequest()->getPost('number'));
-                $TableOperationFactory->setGender($this->getRequest()->getPost('g'));
-                $TableOperationFactory->save();
+                $tableOperationFactory->load($this->getRequest()->getPost('id'));
+                $tableOperationFactory->setName($this->getRequest()->getPost('name'));
+                $tableOperationFactory->setEmail($this->getRequest()->getPost('email'));
+                $tableOperationFactory->setMobileNumber($this->getRequest()->getPost('number'));
+                $tableOperationFactory->setGender($this->getRequest()->getPost('g'));
+                $tableOperationFactory->save();
             }
             else
             {
             
-                $TableOperationFactory->setName($this->getRequest()->getPost('name'));
-                $TableOperationFactory->setEmail($this->getRequest()->getPost('email'));
-                $TableOperationFactory->setMobileNumber($this->getRequest()->getPost('number'));
-                $TableOperationFactory->setGender($this->getRequest()->getPost('g'));
-                $TableOperationFactory->save();
+                $tableOperationFactory->setName($this->getRequest()->getPost('name'));
+                $tableOperationFactory->setEmail($this->getRequest()->getPost('email'));
+                $tableOperationFactory->setMobileNumber($this->getRequest()->getPost('number'));
+                $tableOperationFactory->setGender($this->getRequest()->getPost('g'));
+                $tableOperationFactory->save();
             }
     
-            $this->setTestModel($TableOperationFactory);
-            $GetCollection = $TableOperationFactory->getCollection();
-            return $GetCollection;
+            $this->setTestModel($tableOperationFactory);
+            $getCollection = $tableOperationFactory->getCollection();
+            return $getCollection;
         }
 }
