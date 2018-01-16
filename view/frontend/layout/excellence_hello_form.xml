@@ -6,7 +6,7 @@
 <body>    
     <referenceContainer name="content">
     <block
-            class="Excellence\Hello\Block\Formb"
+            class="Excellence\Hello\Block\FillData"
         	template="fill_data.phtml"
         	name="fill"/>
         </referenceContainer>
